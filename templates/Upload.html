@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+{% include "Partials/_Header.html" %}
+
+<body>
+
+    <!-- NAVBAR STARTS HERE  -->
+    {% include "Partials/_Nav_Bar.html" %}
+    <!-- NAVBAR ENDS HERE  -->
+
+    <!-- WELCOME STARTS HERE  -->
+    <section class="modal-dialog-centered" , style="height: 500px;">
+
+        <div class="mx-auto center mt-5" style="width: 1000px;">
+            <br>
+            <h1 class="text-center display-4 mb-5 mt-5">Welcome to ViewHRV</h1>
+            <br>
+            <p class="lead text-center mt-5 mb-5">On this page you can upload a file containing anotations with theire respected symbols.<br> The file is then processed and as a result you get <br> <kbd>HRV, Poincare Plot, Lombscargle Plot, DFA Plot and ECG Plot</kbd>.</p>
+            <div class="container mx-auto text-center mt-5">
+                <svg class="bi bi-chevron-compact-down" width="3em" height="3em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M3.553 8.776a.5.5 0 01.67-.223L10 11.44l5.776-2.888a.5.5 0 11.448.894l-6 3a.5.5 0 01-.448 0l-6-3a.5.5 0 01-.223-.67z" clip-rule="evenodd"/>
+                    </svg>
+            </div>
+        </div>
+
+
+    </section>
+    <!-- WELCOME ENDS HERE  -->
+
+    <!-- FORM STARTS HERE -->
+    <div class="section mt-5 mb-5">
+        <div class="container w-50">
+            <!-- <div class="custom-file">
+                    <form action = "http://localhost:8000/Results" method = "POST" enctype = "multipart/form-data">
+                        <input type="file" name="file_txt" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                        <input class="btn btn-outline-primary mt-3" type="submit" value="Upload">
+                    </form>
+                </div> -->
+            <form action="{{ url_for('Upload_File') }}" method="POST" enctype="multipart/form-data">
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" name="file_txt" class="custom-file-input" id="inputGroupFile02" />
+                        <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                    </div>
+                    <div class="input-group-append">
+                        <input type="submit" class="btn btn-primary" value="Upload" />
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-6 form-check border-right text-center">
+                        <label class="form-check-label mr-5 mfont" for="inlineRadio1">Are all symbols N ? </label>
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    </div>
+                    <div class="col-md-6 form-check border-left text-center">
+                        <label class="form-check-label mr-5 mfont" for="inlineRadio2">Does the file contained mixed symbols ? </label>
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    </div>
+                </div>
+            </form>
+            <script>
+                $('#inputGroupFile02').on('change', function() {
+                    //get the file name
+                    var fileName = $(this).val();
+                    //replace the "Choose a file" label
+                    $(this).next('.custom-file-label').html(fileName);
+                })
+            </script>
+        </div>
+    </div>
+    <!-- FORM ENDS HERE -->
+
+    <!-- FILE DESCRIPTION ENDS HERE -->
+    <br class="mb-5">
+    <div class="section mt-5 mb-5">
+        <div class="container w-50">
+            <div class="row">
+                <h4 class="mb-5">
+                    <svg class="bi bi-question text-primary" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="font-size: 2rem;">
+                            <path fill-rule="evenodd" d="M10 17a7 7 0 100-14 7 7 0 000 14zm8-7a8 8 0 11-16 0 8 8 0 0116 0z" clip-rule="evenodd"/>
+                            <path d="M7.25 8.033h1.32c0-.781.458-1.384 1.36-1.384.685 0 1.313.343 1.313 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.007.463h1.307v-.355c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.326 0-2.786.647-2.754 2.533zm1.562 5.516c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                        </svg> File format
+                </h4>
+                <p>Keep in mind that the file uploaded should contain the annotation of each beat and of its respected symbol</p>
+                <p>The file should also not exceed 25 MB</p>
+                <p>Currently we do not support bulk uploading and please check the appropriate symbols</p>
+                <div class="row container text-center mt-5 mb-5">
+                    <div class="col-md-6 border-right">
+                        <h5 class="mb-5">Supported File Types</h5>
+                        <p>Text file - .txt</p>
+                        <p>CSV file - .csv</p>
+                        <p>excel file - .xlsx</p>
+                    </div>
+                    <div class="col-md-6 border-left">
+                        <h5 class="mb-5">File Content</h5>
+                        <p>351567,N</p>
+                        <p>351682,N</p>
+                        <p>351794,N</p>
+                        <p>351909,N</p>
+                        <p>352023,N</p>
+                        <p>352140,N</p>
+                        <p>352256,N</p>
+                        <p>352370,N</p>
+                        <p>352486,N</p>
+                        <p>352599,N</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILE DESCRIPTION ENDS HERE -->
+
+    <!-- EXPLANATION STARTS HERE -->
+    <div class="container mx-auto text-center mt-5">
+        <br>
+        <svg class="bi bi-dot" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10 11.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd"/>
+            </svg>
+        <br>
+        <svg class="bi bi-dot" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10 11.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd"/>
+            </svg>
+        <br>
+        <svg class="bi bi-dot" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10 11.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd"/>
+            </svg>
+        <br>
+    </div>
+
+    <div class="mx-auto center mb-5" style="width: 1000px;">
+        <h1 class="text-center display-4 mt-5 mb-5">What Information to expect in the Results</h1>
+    </div>
+    <br class="mb-5">
+    <div class="container mb-5">
+        <div class="card-deck mx-auto">
+            <div class="card text-dark border-primary mb-3">
+                <div class="card-header border-primary">Features</div>
+                <div class="card-body">
+                    <h5 class="card-title">Time Domain</h5>
+                    <p class="card-text">Correct and precise calculations of the most import time domain features - SDNN, ASDNN, SDANN, NN50, pNN50 and rMSSD.</p>
+                </div>
+            </div>
+            <div class="card text-dark border-primary mb-3">
+                <div class="card-header border-primary bg-light">Features</div>
+                <div class="card-body">
+                    <h5 class="card-title">Frequency Domain</h5>
+                    <p class="card-text">Utilization of Lombscargle Peridogram to get frequency domain features in the following bands - ULF, VLF, LF, HF and LF/HF</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mx-auto">
+            <div class="card text-dark border-primary mb-3">
+                <div class="card-header border-primary">Features</div>
+                <div class="card-body">
+                    <h5 class="card-title">Nonlinear</h5>
+                    <p class="card-text">Calculation of Poincare features and of Detrended Fluctuation features.</p>
+                </div>
+            </div>
+            <div class="card text-dark border-success mb-3">
+                <div class="card-header border-success">Plots</div>
+                <div class="card-body">
+                    <h5 class="card-title">HRV</h5>
+                    <p class="card-text">Plotting the respected Poincare, Detrended Fluctuation, Lombscargle Periodogram and ECG timeseries.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br class="mt-5 mb-5">
+
+    <!-- EXPLANATION ENDS HERE -->
+    <!-- FOOTER PART STARTS -->
+    {% include "Partials/_Footer.html" %}
+    <!-- FOOTER PART ENDS -->
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% include "Partials/_Scripts.html" %}
+</body>

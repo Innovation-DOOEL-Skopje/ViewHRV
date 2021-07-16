@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+{% include "Partials/_Header.html" %}
+
+<body>
+    <!-- NAVBAR STARTS HERE  -->
+
+    {% include "Partials/_Nav_Bar.html" %}
+
+    <!-- NAVBAR ENDS HERE -->
+
+    <!-- CONTENT STARTS HERE -->
+
+    <section class="modal-dialog-centered mt-5" , style="height: 500px;">
+        <div class="container">
+            <div class="row align-items-center align-middle w-100">
+                <div class="col text-right mb-5 mt-5">
+                    <h1 class="display-4 text-dark">404</h1>
+                    <h3 class="mb-5">Page Not Found</h3>
+                    <div class="row mt-5">
+                        <div class="col-sm-12">
+                            <div class="single">
+                                <h5>Looks like a bad link :(</h5>
+                                <div class="btn-group w-50 justify-content-end ">
+                                    <a class="text-white text-center btn btn-primary w-50 mt-3" tabindex="-1" role="button" href="{{ url_for('main') }}" style="box-shadow: 0px 0px 10px -1px rgba(130,130,130,1);">
+                                        <svg class="bi bi-house" width="2em" height="2em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M9.646 3.146a.5.5 0 01.708 0l6 6a.5.5 0 01.146.354v7a.5.5 0 01-.5.5h-4.5a.5.5 0 01-.5-.5v-4H9v4a.5.5 0 01-.5.5H4a.5.5 0 01-.5-.5v-7a.5.5 0 01.146-.354l6-6zM4.5 9.707V16H8v-4a.5.5 0 01.5-.5h3a.5.5 0 01.5.5v4h3.5V9.707l-5.5-5.5-5.5 5.5z" clip-rule="evenodd"/>
+                                            <path fill-rule="evenodd" d="M15 4.5V8l-2-2V4.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mx-auto text-center mb-5 mt-5">
+                    <svg class="bi bi-x-circle text-danger" width="20em" height="20em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10 17a7 7 0 100-14 7 7 0 000 14zm0 1a8 8 0 100-16 8 8 0 000 16z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M12.646 13.354l-6-6 .708-.708 6 6-.708.708z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M7.354 13.354l6-6-.708-.708-6 6 .708.708z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ONTENT ENDS HERE -->
+
+    <!-- FOOTER PART STARTS -->
+    <br class="mb-5 mt-5"> {% include "Partials/_Footer.html" %}
+
+    <!-- FOOTER PART ENDS -->
+    <!-- Bootstrap core JavaScript -->
+    <!-- ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% include "Partials/_Scripts.html" %}
+</body>
+
+</html>

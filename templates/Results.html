@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html>
+
+{% include "Partials/_Header.html" %}
+
+<body>
+
+    <!-- NAVBAR STARTS HERE  -->
+    {% include "Partials/_Nav_Bar.html" %}
+    <!-- NAVBAR ENDS HERE  -->
+
+    <!-- WELCOME STARTS HERE  -->
+    <div class="container-fluid mt-5">
+        <section class="modal-dialog-centered">
+            <div class="mx-auto center mt-5" style="max-width: 1000px;">
+                <br>
+                <h1 class="text-center display-4 mb-5 mt-5">Welcome to the <kbd>Results</kbd></h1>
+                <br>
+                <p class="lead text-center mt-5 mb-5">The page shows the HRV analysis for the selected patient.
+                    <div class="container mx-auto text-center mt-5 mb-5">
+                        <svg class="bi bi-bullseye mt-5 mb-5" style="font-size: 3rem;" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 17a7 7 0 100-14 7 7 0 000 14zm0 1a8 8 0 100-16 8 8 0 000 16z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd" d="M10 15a5 5 0 100-10 5 5 0 000 10zm0 1a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd" d="M10 13a3 3 0 100-6 3 3 0 000 6zm0 1a4 4 0 100-8 4 4 0 000 8z" clip-rule="evenodd"/>
+                    <path d="M11.5 10a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                </svg>
+                    </div>
+            </div>
+
+        </section>
+    </div>
+    <!-- WELCOME ENDS HERE  -->
+
+
+    <!-- REPORTS STARTS HERE  -->
+    <div class="container-fluid">
+        <section class="modal-dialog-centered mt-5 mb-5">
+
+            <div class="row mx-auto mfont" style="width: 100%;">
+                <!-- TIME DOMAIN INDICES START -->
+                <div class="col-md-4">
+                    <h2 class="mb-2">Time Domain</h2>
+                    <hr class="w-50 bg-primary d-inline-block" style="height: 1.5px;">
+                    <hr class="w-25 bg-success d-inline-block" style="height: 1.5px;">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Indice</th>
+                                    <th scope="col">Measurement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="col">SDNN</td>
+                                    <td>{{data.Time_Domain_Features.SDNN}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">ASDNN</td>
+                                    <td>{{data.Time_Domain_Features.ASDNN}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">SDANN</td>
+                                    <td>{{data.Time_Domain_Features.SDANN}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">NN50</td>
+                                    <td>{{data.Time_Domain_Features.NN50}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">pNN50</td>
+                                    <td>{{data.Time_Domain_Features.pNN50}}%</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">rMSSD</td>
+                                    <td>{{data.Time_Domain_Features.rMSSD}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- TIME DOMAIN INDICES END -->
+                <!-- FREQUENCY DOMAIN INDICES START -->
+                <div class="col-md-4">
+                    <h2>Frequency Domain</h2>
+                    <hr class="w-50 bg-primary d-inline-block" style="height: 1.5px;">
+                    <hr class="w-25 bg-success d-inline-block" style="height: 1.5px;">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Indice</th>
+                                    <th scope="col">Measurement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="col">ULF (0-0.333)</td>
+                                    <td>{{data.Frequency_Domain_Features.ulf}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">VLF (0.333-0.04)</td>
+                                    <td>{{data.Frequency_Domain_Features.vlf}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">LF (0.04-0.15)</td>
+                                    <td>{{data.Frequency_Domain_Features.lf}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">HF (0.15-0.4)</td>
+                                    <td>{{data.Frequency_Domain_Features.hf}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">LF/HF</td>
+                                    <td>{{data.Frequency_Domain_Features.lf_hf_ratio}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">Total Power</td>
+                                    <td>{{data.Frequency_Domain_Features.total_power}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- FREQUENCY DOMAIN INDICES END -->
+                <!-- NONELINEAR MEASUREMENTS INDICES START -->
+                <div class="col-md-4">
+                    <h2>Nonlinear Measurements</h2>
+                    <hr class="w-50 bg-primary d-inline-block" style="height: 1.5px;">
+                    <hr class="w-25 bg-success d-inline-block" style="height: 1.5px;">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Indice</th>
+                                    <th scope="col">Measurement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="col">SD1</td>
+                                    <td>{{data.Nonlinear_Measurements.Poincare_Features.sd1}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">SD2</td>
+                                    <td>{{data.Nonlinear_Measurements.Poincare_Features.sd2}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">SD1/SD2</td>
+                                    <td>{{data.Nonlinear_Measurements.Poincare_Features.ratio_sd2_sd1}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">DFA Alpha 1</td>
+                                    <td>{{data.Nonlinear_Measurements.DFA_Features.dfa_alpha1}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">DFA Alpha 2</td>
+                                    <td>{{data.Nonlinear_Measurements.DFA_Features.dfa_alpha2}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- NONLINEAR MEASUREMENTS INDICES END -->
+            </div>
+    </div>
+    </section>
+    <!-- WELCOME ENDS HERE  -->
+    <!-- GRAPHING PART STARTS -->
+    <section class="mt-5 mb-5">
+        <div class="row mx-auto" style="width: 100%;">
+            <div class="col-md-4">
+                <figure class="figure">
+                    <img src="{{ url_for('static', filename='Temporary/Lomb_Temporary.png') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption text-center text-capitalize font-weight-bold">
+                        <h3 class="mt-5">Lombscargle Periodogram</h3>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-4">
+                <figure class="figure">
+                    <img src="{{ url_for('static', filename='Temporary/Poincare_Temporary.png') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption text-center text-capitalize font-weight-bold">
+                        <h3 class="mt-5">Poincare Plot</h3>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-4">
+                <figure class="figure">
+                    <img src="{{ url_for('static', filename='Temporary/DFA_Temporary.png') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption text-center text-capitalize font-weight-bold">
+                        <h3 class="mt-5">Detrended Fluctuation Plot</h3>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="row mx-auto" style="width: 100%;">
+
+            <div class="col-12">
+                <figure class="container" style="max-width: 100%;">
+                    <img src="{{ url_for('static', filename='Temporary/ECG_Temporary.png') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption text-center text-capitalize font-weight-bold">
+                        <h3 class="mt-5">RR Time Series</h3>
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+    </section>
+    <!-- GRAPHING PART ENDS -->
+    <!-- FOOTER PART ENDS -->
+    {% include "Partials/_Footer.html" %}
+    <!-- FOOTER PART ENDS -->
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% include "Partials/_Scripts.html" %}
+</body>
+
+</html>

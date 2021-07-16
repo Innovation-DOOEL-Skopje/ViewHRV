@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+{% include "Partials/_Header.html" %}
+
+<body>
+
+    <body>
+
+        <!-- NAVBAR STARTS HERE  -->
+
+        {% include "Partials/_Nav_Bar.html" %}
+
+        <!-- NAVBAR ENDS HERE  -->
+
+        <!-- WELCOME STARTS HERE  -->
+        <section class="modal-dialog-centered mt-5" , style="height: 500px;">
+
+            <div class="mx-auto center" style="width: 1000px;">
+                <br>
+                <h1 class="text-center display-4 pfont mb-5 mt-5">Mit-Bih Arythmia Database</h1>
+                <br>
+                <p class="lead text-center mfont mt-5 mb-5">The page provides all the IDs of the patients located in the database.<br> In order to view the HRV analysis, all you need to do is select the ID of the patient from the list below, the same way they are put in the database <kbd>ex. 101, 105, 128</kbd>.</p>
+                <div class="container mx-auto text-center mt-5">
+                    <svg class="bi bi-chevron-compact-down" width="3em" height="3em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M3.553 8.776a.5.5 0 01.67-.223L10 11.44l5.776-2.888a.5.5 0 11.448.894l-6 3a.5.5 0 01-.448 0l-6-3a.5.5 0 01-.223-.67z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+            </div>
+
+
+        </section>
+        <!-- WELCOME ENDS HERE  -->
+        <!-- TABLE STARTS HERE -->
+        <section class="mt-5">
+            <div class="row p-5">
+                <div class="col-md border-right border-secondary p-5">
+                    <div class="container">
+                        <h1 class="text-center display-4 pfont">All Patients Available</h1>
+                        <hr>
+                        <br>
+                        <br>
+                        <br>
+
+                    </div>
+                    <div class="container text-center">
+                        <h2 class="mb-2 pfont">Patient IDs</h2>
+                        <!-- <hr class="w-50 bg-primary d-inline-block" style="height: 1.5px;">
+                                <hr class="w-25 bg-warning d-inline-block" style="height: 1.5px;"> -->
+                        <div class="text-center table-responsive w-100 mx-auto mt-5">
+                            <table class="table table-striped table-sm">
+                                <!-- <thead class="thead-dark">
+                                            <tr>
+                                                 <th scope="col">Patient</th>
+                                            </tr>
+                                        </thead> -->
+                                <tbody class="mfont">
+                                    <tr>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=100">100</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=101">101</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=102">102</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=103">103</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=104">104</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=105">105</a></td>
+                                    </tr>
+                                    <tr>
+                                        <!-- <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=106">106</a></td> -->
+                                        <!-- <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=107">107</a></td> -->
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=108">108</a></td>
+                                        <!-- <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=109">109</a></td> -->
+                                        <!-- <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=111">111</a></td> -->
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=112">112</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=113">113</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=114">114</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=115">115</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=116">116</a></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=117">117</a></td>
+                                        <!-- <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=118">118</a></td> -->
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=119">119</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=121">121</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=122">122</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=123">123</a></td>
+                                        <!-- <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=124">124</a></td> -->
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=200">200</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=201">201</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=202">202</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=203">203</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=205">205</a></td>
+                                        <!-- <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=207">207</a></td> -->
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=208">208</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=209">209</a></td>
+                                    </tr>
+                                    <tr>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=210">210</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=212">212</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=213">213</a></td>
+                                        <!-- <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=214">214</a></td> -->
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=215">215</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=217">217</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=219">219</a></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=220">220</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=221">221</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=222">222</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=223">223</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=228">228</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=230">230</a></td>
+                                    </tr>
+                                    <tr>
+
+                                        <!-- <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=231">231</a></td> -->
+                                        <!-- <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=232">232</a></td> -->
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=233">233</a></td>
+                                        <td scope="col"><a class="text-dark font-weight-bold" href="http://ervin007.pythonanywhere.com/MitBihDB/Report?patient_id=234">234</a></td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                            <div class="text-left mt-5">
+                                <div class="col-md">
+                                    <svg class="bi bi-alert-triangle-fill d-inline text-warning" width="3em" height="3em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M9.022 3.566a1.13 1.13 0 011.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H3.144c-.889 0-1.437-.99-.98-1.767L9.022 3.566zM9.002 14a1 1 0 112 0 1 1 0 01-2 0zM10 7a.905.905 0 00-.9.995l.35 3.507a.553.553 0 001.1 0l.35-3.507A.905.905 0 0010 7z" clip-rule="evenodd"/>
+                                </svg>
+                                </div>
+                                <div class="col-md">
+                                    <p class="text-left d-inline lead mfont">Certain Patients Have Paced Rythm</p>
+                                    <br>
+                                    <p class="text-left d-inline lead mfont">This Dataset Does Not Contain Healthy Patients</p>
+                                    <br>
+                                    <p class="text-left d-inline lead mfont">Characteristics Differ For Each Patient</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md p-5">
+                    <div class="containerp">
+                        <h1 class="text-center display-4 pfont">What to Expect</h1>
+                        <hr>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="container">
+                        <h2 class="mb-12 pfont">Time Domain Calculations</h2>
+                        <hr class="w-50 bg-primary d-inline-block" style="height: 1.5px;">
+                        <hr class="w-25 bg-success d-inline-block" style="height: 1.5px;">
+                        <!-- <div class="text-center"> -->
+                        <div class="table-responsive w-75 mx-auto text-center mt-5 mb-5">
+                            <table class="table table-striped table-sm mfont">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Indice</th>
+                                        <th scope="col">Measurement</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="col">SDNN</td>
+                                        <td>35</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col">ASDNN</td>
+                                        <td>31</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col">SDANN</td>
+                                        <td>16</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col">NN50</td>
+                                        <td>116</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col">pNN50</td>
+                                        <td>5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col">rMSSD</td>
+                                        <td>27</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                    <div class="container">
+                        <figure class="figure">
+                            <img src="../static/Figures_Demo/Poincare.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                            <!-- <figcaption class="figure-caption text-center text-capitalize font-weight-bold"><h3>Fig 2 - Poincare Plot</h3></figcaption> -->
+                        </figure>
+                    </div>
+                </div>
+        </section>
+        <!-- TABLE ENDS HERE -->
+        <!-- FOOTER PART STARTS -->
+
+        {% include "Partials/_Footer.html" %}
+
+        <!-- FOOTER PART ENDS -->
+        <!-- Bootstrap core JavaScript
+            ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        {% include "Partials/_Scripts.html" %}
+    </body>
+
+</html>

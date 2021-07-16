@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html>
+
+{% include "Partials/_Header.html" %}
+
+
+<body>
+
+    <!-- NAVBAR STARTS HERE  -->
+    {% include "Partials/_Nav_Bar.html" %}
+    <!-- NAVBAR ENDS HERE  -->
+
+    <!-- WELCOME STARTS HERE  -->
+    <div class="container-fluid mt-5">
+        <section class="modal-dialog-centered">
+
+            <div class="mx-auto center" style="max-width: 1000px;">
+                <h1 class="text-center display-4">Welcome to the <kbd>Dashboard</kbd></h1>
+                <p class="lead text-center mfont">The page shows the HRV analysis for the selected patient.
+            </div>
+
+        </section>
+    </div>
+    <!-- WELCOME ENDS HERE  -->
+
+
+    <!-- REPORTS STARTS HERE  -->
+    <div class="container-fluid">
+        <section class="modal-dialog-centered mt-5 mb-5">
+
+            <div class="row mx-auto" style="width: 100%;">
+                <!-- TIME DOMAIN INDICES START -->
+                <div class="col-md-4 mfont">
+                    <h2 class="mb-2">Time Domain Calculations</h2>
+                    <hr class="w-50 bg-primary d-inline-block" style="height: 1.5px;">
+                    <hr class="w-25 bg-success d-inline-block" style="height: 1.5px;">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Indice</th>
+                                    <th scope="col">Measurement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="col">SDNN</td>
+                                    <td>{{data.Time_Domain.SDNN}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">ASDNN</td>
+                                    <td>{{data.Time_Domain.ASDNN}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">SDANN</td>
+                                    <td>{{data.Time_Domain.SDANN}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">NN50</td>
+                                    <td>{{data.Time_Domain.NN50}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">pNN50</td>
+                                    <td>{{data.Time_Domain.pNN50}}%</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">rMSSD</td>
+                                    <td>{{data.Time_Domain.rMSSD}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- TIME DOMAIN INDICES END -->
+                <!-- FREQUENCY DOMAIN INDICES START -->
+                <div class="col-md-4 mfont">
+                    <h2>Frequency Domain Calculations</h2>
+                    <hr class="w-50 bg-primary d-inline-block" style="height: 1.5px;">
+                    <hr class="w-25 bg-success d-inline-block" style="height: 1.5px;">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Indice</th>
+                                    <th scope="col">Measurement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="col">ULF (0-0.333)</td>
+                                    <td>{{data.Frequency_Domain.ULF}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">VLF (0.333-0.04)</td>
+                                    <td>{{data.Frequency_Domain.VLF}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">LF (0.04-0.15)</td>
+                                    <td>{{data.Frequency_Domain.LF}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">HF (0.15-0.4)</td>
+                                    <td>{{data.Frequency_Domain.HF}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">LF/HF</td>
+                                    <td>{{data.Frequency_Domain.LF-HF}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">Total Power</td>
+                                    <td>{{data.Frequency_Domain.Total_Power}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- FREQUENCY DOMAIN INDICES END -->
+                <!-- NONELINEAR MEASUREMENTS INDICES START -->
+                <div class="col-md-4 mfont">
+                    <h2>Nonlinear Measurements</h2>
+                    <hr class="w-50 bg-primary d-inline-block" style="height: 1.5px;">
+                    <hr class="w-25 bg-success d-inline-block" style="height: 1.5px;">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Indice</th>
+                                    <th scope="col">Measurement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="col">SD1</td>
+                                    <td>{{data.NoneLinear_Measurements.Poincare.SD1}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">SD2</td>
+                                    <td>{{data.NoneLinear_Measurements.Poincare.SD2}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">SD1/SD2</td>
+                                    <td>{{data.NoneLinear_Measurements.Poincare.SD_Ratio}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">Ellipse Area</td>
+                                    <td>{{data.NoneLinear_Measurements.Poincare.Ellipse_Area}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">DFA Alpha 1</td>
+                                    <td>{{data.NoneLinear_Measurements.DFA.DFA_Alpha_1}}</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">DFA Alpha 2</td>
+                                    <td>{{data.NoneLinear_Measurements.DFA.DFA_Alpha_2}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- NONLINEAR MEASUREMENTS INDICES END -->
+            </div>
+    </div>
+    </section>
+    <!-- WELCOME ENDS HERE  -->
+    <!-- GRAPHING PART STARTS -->
+    <section class="mt-5 mb-5">
+        <div class="row mx-auto" style="width: 100%;">
+            <div class="col-md-4">
+                <figure class="figure">
+                    <img src="{{ url_for('static', filename='Temporary/Lomb_Temporary.png') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption text-center text-capitalize font-weight-bold">
+                        <h3>Fig 1 - Lombscargle Periodogram</h3>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-4">
+                <figure class="figure">
+                    <img src="{{ url_for('static', filename='Temporary/Poincare_Temporary.png') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption text-center text-capitalize font-weight-bold">
+                        <h3>Fig 2 - Poincare Plot</h3>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-4">
+                <figure class="figure">
+                    <img src="{{ url_for('static', filename='Temporary/DFA_Temporary.png') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption text-center text-capitalize font-weight-bold">
+                        <h3>Fig 3 - Detrended Fluctuation Plot</h3>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="row mx-auto" style="width: 100%;">
+
+            <div class="col-12">
+                <figure class="figure">
+                    <img src="{{ url_for('static', filename='Temporary/ECG_Temporary.png') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption text-center text-capitalize font-weight-bold">
+                        <h3>Fig 4 - ECG Signal Plot, with respect to channel</h3>
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+    </section>
+    <!-- GRAPHING PART ENDS -->
+    <!-- FOOTER PART ENDS -->
+    {% include "Partials/_Footer.html" %}
+    <!-- FOOTER PART ENDS -->
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% include "Partials/_Scripts.html" %}
+</body>
+
+</html>

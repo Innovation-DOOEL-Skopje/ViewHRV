@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+{% include "Partials/_Header.html" %}
+
+<body>
+    <!-- NAVBAR STARTS HERE  -->
+
+    {% include "Partials/_Nav_Bar.html" %}
+
+    <!-- NAVBAR ENDS HERE  -->
+
+    <!-- WELCOME STARTS HERE  -->
+    <section class="modal-dialog-centered mt-5" , style="height: 500px;">
+        <div class="container">
+            <div class="row align-items-center align-middle w-100">
+                <div class="col">
+                    <h1 class="display-4 text-dark mt-5 mb-2">ViewHRV</h1>
+                    <h3 class="mb-5">UNDER CONSTRUCTION</h3>
+                    <div class="row mt-5">
+                        <div class="col-sm-12">
+                            <div class="single">
+                                <h5>Be the first to know</h5>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Enter your email">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mx-auto text-center">
+                    <svg class="bi bi-alert-octagon-fill text-warning" width="20em" height="20em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M13.107 2a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H6.893a.5.5 0 01-.353-.146L2.146 13.46A.5.5 0 012 13.107V6.893a.5.5 0 01.146-.353L6.54 2.146A.5.5 0 016.893 2h6.214zM9.002 13a1 1 0 112 0 1 1 0 01-2 0zM10 6a.905.905 0 00-.9.995l.35 3.507a.553.553 0 001.1 0l.35-3.507A.905.905 0 0010 6z" clip-rule="evenodd"/>
+                        </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WELCOME ENDS HERE  -->
+
+    <!-- FOOTER PART STARTS -->
+    <br class="mb-5 mt-5"> {% include "Partials/_Footer.html" %}
+
+    <!-- FOOTER PART ENDS -->
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% include "Partials/_Scripts.html" %}
+</body>
+
+</html>
