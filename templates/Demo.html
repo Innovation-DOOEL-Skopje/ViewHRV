@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html>
+{% include "Partials/_Header.html" %}
+
+<body class="mfont">
+
+    <!-- NAVBAR STARTS HERE  -->
+    {% include "Partials/_Nav_Bar.html" %}
+    <!-- NAVBAR ENDS HERE  -->
+
+    <!-- WELCOME STARTS HERE  -->
+    <br class="mb-5 mt-5">
+    <div class="container-fluid mb-5 mt-5">
+        <section class="modal-dialog-centered">
+
+            <div class="mx-auto center" style="max-width: 1000px;">
+                <h1 class="text-center display-4 pfont">Welcome to the <kbd>Results</kbd></h1>
+            </div>
+
+        </section>
+    </div>
+    <br class="mb-5 mt-5">
+    <!-- WELCOME ENDS HERE  -->
+
+
+    <!-- REPORTS STARTS HERE  -->
+    <div class="container-fluid">
+        <section class="modal-dialog-centered mt-5 mb-5">
+
+            <div class="row mx-auto" style="width: 100%;">
+                <!-- TIME DOMAIN INDICES START -->
+                <div class="col-md-4">
+                    <h2 class="mb-2 pfont">Time Domain</h2>
+                    <hr class="w-50 bg-primary d-inline-block" style="height: 1.5px;">
+                    <hr class="w-25 bg-success d-inline-block" style="height: 1.5px;">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Indice</th>
+                                    <th scope="col">Measurement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="col">SDNN</td>
+                                    <td>35</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">ASDNN</td>
+                                    <td>31</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">SDANN</td>
+                                    <td>16</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">NN50</td>
+                                    <td>116</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">pNN50</td>
+                                    <td>5%</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">rMSSD</td>
+                                    <td>27</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- TIME DOMAIN INDICES END -->
+                <!-- FREQUENCY DOMAIN INDICES START -->
+                <div class="col-md-4">
+                    <h2>Frequency Domain</h2>
+                    <hr class="w-50 bg-primary d-inline-block" style="height: 1.5px;">
+                    <hr class="w-25 bg-success d-inline-block" style="height: 1.5px;">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Indice</th>
+                                    <th scope="col">Measurement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="col">ULF (0-0.333)</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">VLF (0.333-0.04)</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">LF (0.04-0.15)</td>
+                                    <td>82</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">HF (0.15-0.4)</td>
+                                    <td>521</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">LF/HF</td>
+                                    <td>0.157</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">Total Power</td>
+                                    <td>809</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- FREQUENCY DOMAIN INDICES END -->
+                <!-- NONELINEAR MEASUREMENTS INDICES START -->
+                <div class="col-md-4">
+                    <h2>Nonlinear Measurements</h2>
+                    <hr class="w-50 bg-primary d-inline-block" style="height: 1.5px;">
+                    <hr class="w-25 bg-success d-inline-block" style="height: 1.5px;">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Indice</th>
+                                    <th scope="col">Measurement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="col">SD1</td>
+                                    <td>45</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">SD2</td>
+                                    <td>53</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">SD1/SD2</td>
+                                    <td>0.857</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">Ellipse Area</td>
+                                    <td>7672</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">DFA Alpha 1</td>
+                                    <td>0.676</td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">DFA Alpha 2</td>
+                                    <td>0.846</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- NONLINEAR MEASUREMENTS INDICES END -->
+            </div>
+    </div>
+    </section>
+    <!-- WELCOME ENDS HERE  -->
+    <!-- GRAPHING PART STARTS -->
+    <section class="mt-5 mb-5">
+        <div class="row mx-auto" style="width: 100%;">
+            <div class="col-md-4">
+                <figure class="figure">
+                    <img src="{{ url_for('static', filename='Figures_Demo/Lomb.png') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption text-center text-capitalize font-weight-bold">
+                        <h3>Lombscargle Periodogram</h3>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-4">
+                <figure class="figure">
+                    <img src="{{ url_for('static', filename='Figures_Demo/Poincare.png') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption text-center text-capitalize font-weight-bold">
+                        <h3>Poincare Plot</h3>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-md-4">
+                <figure class="figure">
+                    <img src="{{ url_for('static', filename='Figures_Demo/DFA.png') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption text-center text-capitalize font-weight-bold">
+                        <h3>Detrended Fluctuation Plot</h3>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="row mx-auto" style="width: 100%;">
+
+            <div class="col-12">
+                <figure class="figure">
+                    <img src="{{ url_for('static', filename='Figures_Demo/ECG.png') }}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption text-center text-capitalize font-weight-bold">
+                        <h3>ECG Signal Plot, with respect to channel</h3>
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+    </section>
+    <!-- GRAPHING PART ENDS -->
+    <!-- FOOTER PART ENDS -->
+    {% include "Partials/_Footer.html" %}
+    <!-- FOOTER PART ENDS -->
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% include "Partials/_Scripts.html" %}
+</body>
+
+</html>

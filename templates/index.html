@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+{% include "Partials/_Header.html" %}
+
+<body>
+    <!-- NAVBAR STARTS HERE  -->
+
+    {% include "Partials/_Nav_Bar.html" %}
+
+    <!-- NAVBAR ENDS HERE  -->
+
+    <!-- WELCOME STARTS HERE  -->
+    <section class="modal-dialog-centered mt-5" , style="height: 500px;">
+
+        <div class="container d-flex">
+            <div class="">
+                <div class="row align-items-center align-middle">
+                    <div class="col-lg-12">
+                        <h1 class="display-4 text-dark mt-5 mb-2">ViewHRV</h1>
+                        <p class="lead mb-5 text-dark-50">Welcome to ViewHRV, a site whose main purpose and goal is to provide the most accurate calculation of all HRV indices and in doing so provide the appropriate plots</p>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="btn-toolbar col-lg-12">
+                        <div class="btn-group mr-2">
+                            <a href="{{ url_for('MitBihDB') }}">
+                                <button type="button" class="btn btn-primary">Mit-Bih Dataset</button>
+                            </a>
+                        </div>
+                        <div class="btn-group mr-2">
+                            <a href="{{ url_for('Upload') }}">
+                                <button type="button" class="btn btn-primary">Upload Custom File</button>
+                            </a>
+                        </div>
+                        <div class="btn-group">
+                            <a href="{{ url_for('Demo') }}">
+                                <button type="button" class="btn btn-primary">Demo</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <!-- WELCOME ENDS HERE  -->
+    <!-- Statistical STARTS HERE -->
+    <br class="mb-5 mt-5">
+    <section class="ml-5 mr-5 mb-5 mt-5">
+        <div class="row p-5 align-items-center">
+            <div class="col-md-6">
+                <div class="container">
+                    <img class="img-fluid mx-auto d-block" src="static/ecg-line-hrv.gif">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="container">
+                    <div class="mx-auto p-5">
+                        <h2 class="text-center">Statistical Computations</h2>
+                        <hr>
+                        <br>
+                        <h5>Time Domain</h5>
+                        <p> Explanation what are time domain and how we calculate </p>
+                        <br>
+                        <h5>Frequency Domain</h5>
+                        <p> Explanation what are frequency domain and how we calculate </p>
+                        <br>
+                        <h5>Nonlinear Measurements</h5>
+                        <p> Explanation what are Nonlinear Measurements and how we calculate </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- STATISTICAL ENDS HERE -->
+    <!-- PLOTS STARTS HERE -->
+    <section class="ml-5 mr-5 mb-5 mt-5">
+        <div class="row p-5 align-items-center">
+            <div class="col-md-6">
+                <div class="container">
+                    <div class="mx-auto p-5 text-right">
+                        <h2 class="text-center">Plots</h2>
+                        <hr>
+                        <br>
+                        <h5>Poincaré</h5>
+                        <p> The Poincaré plot is a scatter graph that visualizes the correlation between two consecutive data points in a time-series (i.e., x-axis: An versus y-axis: An+1). It has extensively been used in the analysis heart rate variability
+                            and has enabled researchers to measure short- and long-term variability separately. </p>
+                        <br>
+                        <h5>Lomb-Scargle Periodogram</h5>
+                        <p> Lomb-Scargle Periodogram is a method of estimating a frequency spectrum, based on a least squares fit of sinusoids to data samples. When analysing the HRV, the Lomb-Scargle method is prefered over the Welch Periodogram because
+                            the data is varied and not evenly spaced. </p>
+                        <br>
+                        <h5>Detrended Fluctuation Analysis</h5>
+                        <p> Detrended Fluctuation Analysis has proven useful in revealing the extent of long-range correlations in time series. Furthermore, it is suitable for the analysis of nonstationary time series and has confirmed the existence of persistent
+                            long-range correlations in healthy heart rate variability data. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="container">
+                    <img class="img-fluid mx-auto d-block" src="static/Plots.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PLOTS ENDS HERE -->
+    <!-- CARD GROUP STARTS HERE -->
+    <br class="mb-5 mt-5">
+    <section class="mb-5 mt-5">
+        <div class="container">
+            <div class="card-deck">
+                <div class="card text-center ml-5 mr-5 border-primary">
+                    <svg class="bi bi-bullseye align-self-center mb-5 mt-5 text-primary" width="3em" height="3em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 17a7 7 0 100-14 7 7 0 000 14zm0 1a8 8 0 100-16 8 8 0 000 16z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd" d="M10 15a5 5 0 100-10 5 5 0 000 10zm0 1a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd" d="M10 13a3 3 0 100-6 3 3 0 000 6zm0 1a4 4 0 100-8 4 4 0 000 8z" clip-rule="evenodd"/>
+                                <path d="M11.5 10a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                            </svg>
+                    <div class="card-body border-top border-primary">
+                        <h5 class="card-title">Accuracy</h5>
+                        <p class="card-text">Analyzed previous research regarding the domain, developed custom algorithm based on research.</p>
+                    </div>
+                </div>
+                <div class="card text-center ml-5 mr-5 border-primary">
+                    <svg class="bi bi-stopwatch-fill align-self-center mb-5 mt-5 text-primary" width="3em" height="3em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M7.5 2.5A.5.5 0 018 2h4a.5.5 0 010 1h-1v1.07A7.002 7.002 0 0110 18 7 7 0 019 4.07V3H8a.5.5 0 01-.5-.5zm3 4.5a.5.5 0 00-1 0v3.5h-3a.5.5 0 000 1H10a.5.5 0 00.5-.5V7z" clip-rule="evenodd"/>
+                            </svg>
+                    <div class="card-body border-top border-primary">
+                        <h5 class="card-title">Speed</h5>
+                        <p class="card-text">Utilizing cloud computing enabled by C or Python, provides lightning quick calculations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br class="mb-5 mt-5">
+    <br class="mb-5 mt-5">
+    <!-- CARD GROUP ENDS HERE -->
+
+    <!-- FOOTER PART STARTS -->
+    <br class="mb-5 mt-5"> {% include "Partials/_Footer.html" %}
+
+    <!-- FOOTER PART ENDS -->
+    <!-- Bootstrap core JavaScript
+            ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% include "Partials/_Scripts.html" %}
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<nav class="navbar navbar-dark bg-white nav-pills text-dark" style="box-shadow: 0px 0px 10px -1px rgba(130,130,130,1); z-index: 4;">
+    <div class="row" style="width:100%">
+        <div class="col-6">
+            <a class="navbar-brand justify-content-start mfont text-dark" href="{{ url_for('main') }}">
+                <!-- <img src="{{ url_for('static', filename='favicon.png') }}" width="50" height="50" class="d-inline-block" alt=""> -->
+                <img src="../static/innovation_logo.png" width="50%" height="" class="d-inline" alt=""> Innovation
+            </a>
+        </div>
+        <div class="col-6 d-flex justify-content-end mfont">
+            <a {% if request.path=='/' %}class="nav-link text-white align-self-center btn btn-success mr-3 active" {% else %} class="nav-link text-white align-self-center btn btn-primary mr-3" {% endif %} tabindex="-1" role="button" href="{{ url_for('main') }}" style="box-shadow: 0px 0px 10px -1px rgba(130,130,130,1);">
+                Home
+            </a>
+            <a {% if request.path=='/MitBihDB' %}class="nav-link text-white align-self-center btn btn-success mr-3 active" {% else %} class="nav-link text-white align-self-center btn btn-primary mr-3" {% endif %} tabindex="-1" role="button" href="{{ url_for('MitBihDB') }}"
+                style="box-shadow: 0px 0px 10px -1px rgba(130,130,130,1);">
+                Mit-Bih
+            </a>
+            <a {% if request.path=='/Upload/' %}class="nav-link text-white align-self-center btn btn-success mr-3 active" {% else %} class="nav-link text-white align-self-center btn btn-primary mr-3" {% endif %} tabindex="-1" role="button" href="{{ url_for('Upload') }}"
+                style="box-shadow: 0px 0px 10px -1px rgba(130,130,130,1);">
+                Upload Custom File
+            </a>
+            <a {% if request.path=='/Demo' %}class="nav-link text-white align-self-center btn btn-success active" {% else %} class="nav-link text-white align-self-center btn btn-primary mr-3" {% endif %} tabindex="-1" role="button" href="{{ url_for('Demo') }}" style="box-shadow: 0px 0px 10px -1px rgba(130,130,130,1);">
+                Demo
+            </a>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
